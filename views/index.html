@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Documentation Software</title>
+    <link rel='stylesheet', href='../public/stylesheets/style.css'>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../public/javascripts/main.js"></script>
+  </head>
+  <body>
+    <greyout id="greyOut"></greyout>
+    <confirmation id="confirmation">
+      <label id="confirmationMessage">PLACEHOLDER</label>
+      <label id="confirmationURL">PLACEHOLDER</label>
+      <collection>
+        <input type="button", id="confirmationYes", value="Yes">
+        <input type="button", id="confirmationNo", value="Cancel">
+      </collection>
+    </confirmation>
+    
+    <errorMessage id="errorMessage">
+      <label id="errorMessageMessage">PLACEHOLDER</label>
+      <collection>
+        <input type="button", id="errorOK", value="OK">
+      </collection>
+    </errorMessage>
+
+    <aside>
+      <nav>
+        <ul>
+          <img src="../public/images/logoWhitelightFull.png">
+          <li>
+            <a class="navSelected", href="./index.html">Infrastructure</a>
+          </li>
+          <ul class="asideSubNav", id="InfrastructureSubNav">
+            <li>
+              <a href="./index.html">
+                <p class="subnavSelected"> - All Infrastructure</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addItem.html">
+                <p class="subnavNotSelected"> - Add Infrastructure</p>
+              </a>
+            </li>
+            <li>
+              <ul>
+                <li id="groupHeaderSub">
+                  <a href="./allGroups.html">
+                    <p> - Manage Groups</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li id="categoryHeaderSub">
+                  <a href="./allCategories.html">
+                    <p> - Manage Categories</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+          <li>
+            <a class="navNotSelected", href="./passwords.html"> Passwords</a>
+          </li>
+          <ul class="asideSubNav", id="PasswordsSubNav">
+            <li>
+              <a href="./passwords.html">
+                <p> - All Passwords</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addAccount.html">
+                <p> - Add Account</p>
+              </a>
+            </li>
+          </ul>
+
+          <li>
+            <a class="navNotSelected", href="./accessRights.html"> Access Rights</a>
+          </li>
+          <ul class="asideSubNav", id="Access RightsSubNav">
+            <li>
+              <a href="./accessRights.html">
+                <p> - All Access Rights</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addAccessRights.html">
+                <p> - Add Access Level</p>
+              </a>
+            </li>
+          </ul>
+
+          <li>
+            <a class="navNotSelected", href="./userManagement.html"> User Management</a>
+          </li>
+
+          <li>
+            <a class="navNotSelected", href="#"> Settings</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <titlebar>
+        <p id="titlebarTitle">
+          Infrastructure
+        </p>
+
+        <subnav id="titlebarColumn", class="column2">
+          <p class="subnavOption subSelected">
+            <input id="categoryFilter", type="button", value="Category">
+          </p>
+          <p class="subnavOption">
+            <input od="groupFilter", type="button", value="Group">
+          </p>
+        </subnav>
+
+        <form action="#", method="GET">
+          <input type="text", placeholder="", name="searchBarField">
+          <input type="submit", value="Search", name="search">
+        </form>
+      </titlebar>
+    </main>
+
+    <!--Content here-->
+
+    <content class="groupByCategory visible">
+      <category>
+        <h1 class="categoryTitle">PCs</h1>
+        <div class="tableHeadings">
+          <label>Name</label>
+          <label>Group</label> 
+          <label></label>
+        </div>
+        <row class="grey">
+          <p class="itemName">PC 001</p>
+          <p class="itemGroup">Administration</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="1">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+        <row>
+          <p class="itemName">PC 002</p>
+          <p class="itemGroup">Administration</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="2">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+        <row class="grey">
+          <p class="itemName">PC 003</p>
+          <p class="itemGroup">Administration</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="3">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+        <row>
+          <p class="itemName">PC 004</p>
+          <p class="itemGroup">Accounts</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="4">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+      </category>
+      <category>
+        <h1 class="categoryTitle">Servers</h1>
+        <div class="tableHeadings">
+          <label>Name</label>
+          <label>Group</label> 
+          <label></label>
+        </div>
+        <row class="grey">
+          <p class="itemName">Server 001</p>
+          <p class="itemGroup">IT</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="1">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+      </category>
+    </content>
+
+    <content class="groupByGroup">
+      <category>
+        <h1 class="categoryTitle">Administration</h1>
+        <div class="tableHeadings">
+          <label>Name</label>
+          <label>Group</label> 
+          <label></label>
+        </div>
+        <row class="grey">
+          <p class="itemName">PC 001</p>
+          <p class="itemGroup">PCs</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="1">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+        <row>
+          <p class="itemName">PC 002</p>
+          <p class="itemGroup">PCs</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="2">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+        <row class="grey">
+          <p class="itemName">PC 003</p>
+          <p class="itemGroup">PCs</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="3">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+      </category>
+      <category>
+        <h1 class="categoryTitle">Accounts</h1>
+        <div class="tableHeadings">
+          <label>Name</label>
+          <label>Group</label> 
+          <label></label>
+        </div>
+        
+        <row class="grey">
+          <p class="itemName">PC 004</p>
+          <p class="itemGroup">PCs</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="4">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+      </category>
+      
+      
+      <category>
+        <h1 class="categoryTitle">IT</h1>
+        <div class="tableHeadings">
+          <label>Name</label>
+          <label>Group</label> 
+          <label></label>
+        </div>
+        
+        <row class="grey">
+          <p class="itemName">Server 001</p>
+          <p class="itemGroup">Servers</p>
+          <form action="./infrastructureInformation">
+            <input type="hidden", name="infrastructureID", value="4">
+            <input class="itemButton", type="submit", value="+">
+          </form>
+        </row>
+      </category>
+    </content>
+
+  </body>
+</html>

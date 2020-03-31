@@ -1,0 +1,55 @@
+extends layout
+
+block content
+	content(id="groupDetails")
+		div(class="flexRow")
+			div(class="flexColumn")
+				div(id="manageGroupCore")
+					label(id="groupID")= data['groupInformation']['id']
+					ul
+						li
+							h1(id="groupName")= data['groupInformation']['name']
+						li
+							textarea(id="groupDescription", placeholder="Description", rows="10", readonly)= data['groupInformation']['description']
+					input(id="groupBackButton", type="button", value="Back")
+					input(id="groupEditButton" type="button", value="Edit")
+					input(id="groupDeleteButton", type="button", value="Delete")
+			div(class="flexColumn")
+				h1(id="groupAddMemberTitle") Manage Group Members
+				div(id="groupPopulateDiv")
+					p(class="subnavOption subSelected")
+						input(id="groupMembersFilter" type="button" value="Group Members")
+					p(class="subnavOption")
+						input(id="addToGroupFilter" type="button" value="Not In A Group")
+				div(class="groupMembers visible")
+					- grey = true;
+					- for (i=0; i<data['groupInformation']['infrastructureInGroup'].length; i++) {
+						- if (grey) {
+							row(class="grey")
+								p(class="itemName")= data['groupInformation']['infrastructureInGroup'][i]['infrastructure_name']
+								p(class="itemGroup")= data['groupInformation']['infrastructureInGroup'][i]['category_name']
+								input(class="removeGroupItemButton", type="button", value="-", id= data['groupInformation']['infrastructureInGroup'][i]['infrastructure_id'])
+						- } else {
+							row
+								p(class="itemName")= data['groupInformation']['infrastructureInGroup'][i]['infrastructure_name']
+								p(class="itemGroup")= data['groupInformation']['infrastructureInGroup'][i]['category_name']
+								input(class="removeGroupItemButton", type="button", value="-", id= data['groupInformation']['infrastructureInGroup'][i]['infrastructure_id'])
+						- }
+						- grey = !grey;
+					- }
+				div(class="noGroupMembers hidden")
+					- grey = true;
+					- for(i=0; i<data['groupInformation']['infrastructureNotInAGroup'].length; i++) {
+						- if (grey) {
+							row(class="grey")
+								p(class="itemName")= data['groupInformation']['infrastructureNotInAGroup'][i]['infrastructure_name']
+								p(class="itemGroup")= data['groupInformation']['infrastructureNotInAGroup'][i]['category_name']
+								input(class="addGroupItemButton", type="button", value="+", id= data['groupInformation']['infrastructureNotInAGroup'][i]['infrastructure_id'])
+						- } else {
+							row
+								p(class="itemName")= data['groupInformation']['infrastructureNotInAGroup'][i]['infrastructure_name']
+								p(class="itemGroup")= data['groupInformation']['infrastructureNotInAGroup'][i]['category_name']
+								input(class="addGroupItemButton", type="button", value="+", id= data['groupInformation']['infrastructureNotInAGroup'][i]['infrastructure_id'])
+						- }
+						- grey = !grey;
+					- }

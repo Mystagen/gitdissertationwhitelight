@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	content(id="categoryDetails")
+		div(class="flexRow")
+			div(class="flexColumn")
+				div(id="manageCategoryCore")
+					label(id="categoryID")= data['categoryInformation']['id']
+					ul
+						li
+							h1(id="categoryName")= data['categoryInformation']['name']
+						li
+							textarea(id="categoryDescription", placeholder="Description", rows="10", readonly)= data['categoryInformation']['description']
+					input(id="categoryBackButton", type="button", value="Back")
+					input(id="categoryEditButton" type="button", value="Edit")
+					input(id="categoryDeleteButton", type="button", value="Delete")

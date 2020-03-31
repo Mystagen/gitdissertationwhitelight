@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  content(id="infrastructureDetails")
+    div(class="flexRow")
+      div(class="flexColumn")
+        div(id="infrastructureNames")
+          label(id="infrastructureID")= data['infrastructureInformation']['id']
+          ul
+            li
+              h1(id="infrastructureName")= data['infrastructureInformation']['name']
+            li
+              h3= "Category: " + data['infrastructureInformation']['category']
+            li
+              h3= "Group: " + data['infrastructureInformation']['group']
+          input(id="infrastructureBackButton", type="button", value="Back")
+          input(id="infrastructureEditButton", type="button", value="Edit")
+          input(id="infrastructureDeleteButton", type="button", value="Delete")
+        form(id="infrastructureTechnicalInformation")
+          - for (i=0; i<data['infrastructureInformation']['technicalInformation'].length; i++) {
+              - if (data['infrastructureInformation']['technicalInformation'][i]['informationLabel'] != "") {
+                label= data['infrastructureInformation']['technicalInformation'][i]['informationLabel']
+                input(type= data['infrastructureInformation']['technicalInformation'][i]['fieldType'], value= data['infrastructureInformation']['technicalInformation'][i]['fieldValue'], readonly)
+              - }
+          -}
+      div(class="flexColumn")
+        textarea(id="infrastructureDescription", rows="10", placeholder="Description", readonly)= data['infrastructureInformation']['description']
+        div(id="infrastructurePDFs")
+          p PDFs HERE

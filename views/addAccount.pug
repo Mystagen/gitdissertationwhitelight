@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  content(class="visible")
+    div(class="flexRow")
+      div(class="flexColumn")
+        ul(id="accountCore")
+          label(id="accountID")= data['databaseInformation']['id']
+          li
+            - if (data['mode'] == 'edit' || data['mode'] == 'amend') {
+                input(id="addAccountAccountName", type="text", placeholder="Name of Account", value= data['databaseInformation']['name'])
+            - } else {
+                input(id="addAccountAccountName", type="text", placeholder="Name of Account")
+            - }
+          li
+            - if (data['mode'] == 'edit' || data['mode'] == 'amend') {
+                input(id="addAccountUsername", type="text", placeholder="Username", value= data['databaseInformation']['username'])
+            - } else {
+                input(id="addAccountUsername", type="text", placeholder="Username")
+            - }
+          li
+            - if (data['mode'] == 'edit' || data['mode'] == 'amend') {
+                input(id="addAccountPassword", type="text", placeholder="Password", value= data['databaseInformation']['password'])
+            - } else {
+                input(id="addAccountPassword", type="text", placeholder="Password")
+            - }
+          li
+            - if (data['mode'] == 'edit') {
+                input(id="accountCancelEditButton", type="button", value="Cancel")
+                input(id="accountEditFinishButton", type="button", value="Update")
+            - } else {
+                input(id="accountBackButton", type="button", value="Back")
+                input(id="accountFinishButton", type="button", value="Finish")
+            - }
+      div(class="flexColumn")
+        - if (data['mode'] == 'edit' || data['mode'] == 'amend') {
+            textarea(id="addAccountDescription", placeholder="Description")= data['databaseInformation']['description']
+        - } else {
+            textarea(id="addAccountDescription", placeholder="Description")
+        - }

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+	content(id="categoryDetails")
+		div(class="flexRow")
+			div(class="flexColumn")
+				div(id="manageCategoryCore")
+					label(id="categoryID")= data['databaseInformation']['id']
+					ul
+						li
+							- if (data['mode'] == 'edit' || data['mode'] == 'amend' || data['mode'] == 'amendMidAdd') {
+									input(type="text" id="categoryName" value= data['databaseInformation']['name'])
+							- } else {
+									input(type="text" id="categoryName" placeholder="Name")
+							- }
+						li
+							- if (data['mode'] == 'edit' || data['mode'] == 'amend' || data['mode'] == 'amendMidAdd') {
+									textarea(id="categoryDescription" maxlength="200" rows="10")= data['databaseInformation']['description']
+							- } else {
+									textarea(id="categoryDescription" maxlength="200" rows="10" placeholder="Description")
+							- }
+					- if (data['mode'] == "edit") {
+						input(id="categoryCancelEditButton" type="button" value="Cancel")
+						input(id="categoryEditFinishButton" type="button" value="Update")
+					- } else if (data['mode'] == "quickAdd" || data['mode'] == 'amendMidAdd') {
+						input(id="categoryQuickCancelEditButton" type="button" value="Cancel")
+						input(id="categoryQuickEditFinishButton" type="button" value="Update")
+						label(id="infrastructureID")= data['databaseInformation']['id']
+						label(class="hidden")= data['previousPage']
+					- } else {
+						input(id="categoryBackButton" type="button" value="Back")
+						input(id="categoryFinishButton" type="button" value="Finish")
+					- }

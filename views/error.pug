@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  content(class="visible")
+    h1 404 Page not found
+    h2= error.status
+    pre #{error.stack}

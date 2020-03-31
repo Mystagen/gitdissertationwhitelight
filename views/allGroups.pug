@@ -1,0 +1,55 @@
+extends layout
+
+block content
+
+  content(id="allGroups")
+    
+    - if (data['groupData'].length > 0) {
+        - if (data['searchCriteria'] != "") {
+            div(id="searchCriteriaDiv")
+              h1(id="searchCriteriaMessage")= "Showing Results for: " + data['searchCriteria']
+              form(method="GET", action="#")
+                input(type="submit", value="Clear Search")
+            hr
+        - } 
+        div(class="tableHeadings")
+          label Name
+          label Population
+          label 
+    -   grey = true;
+    -   for (counter = 0; counter < data['groupData'].length; counter++) {
+    -     if (grey) {
+            row(class="grey")
+              p(class="itemName")= data['groupData'][counter]['name']
+              p(class="itemGroup")= data['groupData'][counter]['memberCount']
+              form(action="./manageGroup")
+                input(type="hidden" name="groupID" value=data['groupData'][counter]['id'])
+                input(class="itemButton" type="submit" value="+")
+    -     } else {
+            row()
+              p(class="itemName")= data['groupData'][counter]['name']
+              p(class="itemGroup")= data['groupData'][counter]['memberCount']
+              form(action="./manageGroup")
+                input(type="hidden" name="groupID" value=data['groupData'][counter]['id'])
+                input(class="itemButton" type="submit" value="+")
+    -     }
+    -     if (grey) {
+    -       grey = false;
+    -     } else {
+    -       grey = true;  
+    -     }
+    -   }
+        hr
+    - } else {
+        - if (data['searchCriteria'] == "") {
+            div(id="emptyContentMessage")
+                h1= "No Groups"
+                h1= "Add some to get started!"
+        - } else {
+            div(id="emptyContentMessage")
+                h1= "No results for " + data['searchCriteria']
+                div(id="searchCriteriaDivBottom")
+                    form(method="GET", action="#")
+                        input(type="submit", value="Clear Search")
+        - }
+    - }

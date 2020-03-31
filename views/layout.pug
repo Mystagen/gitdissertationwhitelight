@@ -1,0 +1,236 @@
+doctype html
+html
+  head
+    title= tabtitle
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+    script(src="/javascripts/main.js")
+  body
+    greyOut(id="greyOut")
+    confirmation(id="confirmation")
+      label(id="confirmationMessage") PLACEHOLDER
+      label(id="confirmationURL")
+      collection
+        input(type="button" id="confirmationYes" value="Yes")
+        input(type="button" id="confirmationNo" value="Cancel")
+    errorMessage(id="errorMessage")
+      label(id="errorMessageMessage") PLACEHOLDER
+      collection
+        input(type="button" id="errorOK", value="OK")
+    aside
+      nav
+        ul
+          img(src="/images/logoWhitelightFull.png")
+          li
+            a(class= (navSelected == "infrastructure" ? 'navSelected' : 'navNotSelected'), href="/") Infrastructure
+          ul(class="asideSubNav" id="InfrastructureSubNav")
+            li
+              a(href="./")
+                p(class= (subNavSelected == "index" ? 'subnavSelected' : 'subnavNotSelected')) - All Infrastructure
+            li
+              a(href="./addItem")
+                p(class= (subNavSelected == "addInfrastructure" ? 'subnavSelected' : 'subnavNotSelected')) - Add Infrastructure
+            li
+              if subNavSelected == 'manageGroups' || subNavSelected == "addGroup"
+                ul
+                  li(id="groupHeaderSub")
+                    a(href="./allGroups")
+                      p(class= (subNavSelected == "manageGroups" || subNavSelected == "addGroup" ? 'subnavSelected' : 'subnavNotSelected')) - Manage Groups
+                  li
+                    a(href="./addGroup" class="subNavigation")
+                      p(class= (subNavSelected == "addGroup" ? 'subnavSelected' : 'subnavNotSelected')) - Add Group
+              else
+                ul
+                  li(id="groupHeaderSub")
+                    a(href="./allGroups")
+                      p - Manage Groups
+            li 
+              if subNavSelected == 'manageCategories' || subNavSelected == "addCategory"
+                ul
+                  li(id="categoryHeaderSub")
+                    a(href="./allCategories")
+                      p(class= (subNavSelected == "manageCategories" || subNavSelected == "addCategory" ? 'subnavSelected' : 'subnavNotSelected')) - Manage Categories
+                  li
+                    a(href="./addCategory" class="subNavigation")
+                      p(class= (subNavSelected == "addCategory" ? 'subnavSelected' : 'subnavNotSelected')) - Add Category
+              else
+                ul
+                  li(id="categoryHeaderSub")
+                    a(href="./allCategories")
+                      p - Manage Categories
+          li
+            a(class= (navSelected == "passwords" ? 'navSelected' : 'navNotSelected'), href="./passwords") Passwords
+          ul(class="asideSubNav" id="PasswordsSubNav")
+            li
+              a(href="./passwords")
+                p - All Passwords
+            li
+              a(href="./addAccount")
+                p - Add Account
+          li
+            a(class= (navSelected == "accessRights" ? 'navSelected' : 'navNotSelected'), href="./accessRights") Access Rights
+          ul(class="asideSubNav" id="Access RightsSubNav")
+            li
+              a(href="./accessRights")
+                p - All Access Rights
+            li
+              a(href="./addAccessRights")
+                p - Add Access Level
+          li
+            a(class= (navSelected == "userManagement" ? 'navSelected' : 'navNotSelected'), href="./userManagement") User Management
+          li
+            a(class= (navSelected == "settings" ? 'navSelected' : 'navNotSelected'), href="#") Settings
+      
+    main
+      titlebar
+        p(id="titlebarTitle")= pagetitle
+
+        if topnav == 'index'
+          include subnavIndex
+          
+        - if (search == "true") {
+            form(action="#", method="GET")
+              input(type="text" placeholder="" name="searchBarField")
+              input(type="submit" value="Search" name="search")
+        - } else {
+            form(method="GET")
+              label 
+        - }
+
+    block content
+
+
+<!doctype html>
+<html>
+  <head>
+    <title>Documentation Software</title>
+    <link rel='stylesheet', href='../public/stylesheets/style.css'>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../public/javascripts/main.js"></script>
+  </head>
+  <body>
+    <greyout id="greyOut"></greyout>
+    <confirmation id="confirmation">
+      <label id="confirmationMessage">PLACEHOLDER</label>
+      <label id="confirmationURL">PLACEHOLDER</label>
+      <collection>
+        <input type="button", id="confirmationYes", value="Yes">
+        <input type="button", id="confirmationNo", value="Cancel">
+      </collection>
+    </confirmation>
+    
+    <errorMessage id="errorMessage">
+      <label id="errorMessageMessage">PLACEHOLDER</label>
+      <collection>
+        <input type="button", id="errorOK", value="OK">
+      </collection>
+    </errorMessage>
+
+    <aside>
+      <nav>
+        <ul>
+          <img src="../public/images/logoWhitelightFull.png">
+          <li>
+            <a class="navSelected", href="./index.html">Infrastructure</a>
+          </li>
+          <ul class="asideSubNav", id="InfrastructureSubNav">
+            <li>
+              <a href="./index.html">
+                <p class="subnavSelected"> - All Infrastructure</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addItem.html">
+                <p class="subnavNotSelected"> - Add Infrastructure</p>
+              </a>
+            </li>
+            <li>
+              <ul>
+                <li id="groupHeaderSub">
+                  <a href="./allGroups.html">
+                    <p> - Manage Groups</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li id="categoryHeaderSub">
+                  <a href="./allCategories.html">
+                    <p> - Manage Categories</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+          <li>
+            <a class="navNotSelected", href="./passwords.html"> Passwords</a>
+          </li>
+          <ul class="asideSubNav", id="PasswordsSubNav">
+            <li>
+              <a href="./passwords.html">
+                <p> - All Passwords</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addAccount.html">
+                <p> - Add Account</p>
+              </a>
+            </li>
+          </ul>
+
+          <li>
+            <a class="navNotSelected", href="./accessRights.html"> Access Rights</a>
+          </li>
+          <ul class="asideSubNav", id="Access RightsSubNav">
+            <li>
+              <a href="./accessRights.html">
+                <p> - All Access Rights</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addAccessRights.html">
+                <p> - Add Access Level</p>
+              </a>
+            </li>
+          </ul>
+
+          <li>
+            <a class="navNotSelected", href="./userManagement.html"> User Management</a>
+          </li>
+
+          <li>
+            <a class="navNotSelected", href="#"> Settings</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <titlebar>
+        <p id="titlebarTitle">
+          Infrastructure
+        </p>
+
+        <subnav id="titlebarColumn", class="column2">
+          <p class="subnavOption subSelected">
+            <input id="categoryFilter", type="button", value="Category">
+          </p>
+          <p class="subnavOption">
+            <input od="groupFilter", type="button", value="Group">
+          </p>
+        </subnav>
+
+        <form action="#", method="GET">
+          <input type="text", placeholder="", name="searchBarField">
+          <input type="submit", value="Search", name="search">
+        </form>
+      </titlebar>
+    </main>
+
+    <!--Content here-->
+
+
+  </body>
+</html>

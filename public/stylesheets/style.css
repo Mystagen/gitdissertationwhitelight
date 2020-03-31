@@ -1,0 +1,757 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Calibri Light;
+}
+
+input[type=button] {
+  outline: none;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+  background-color: rgb(48, 112, 190);
+  color: white;
+}
+
+input[type=submit] {
+  outline: none;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(48, 112, 190);
+  color: white;
+}
+
+aside {
+  position: fixed;
+  height: 100%;
+  width: 20%;
+  border-right: 1px solid black;
+  z-index: 2;
+  overflow-x: hidden;
+  background-color: #0C4F9F;
+}
+
+nav { 
+  font-size: 20px;
+}
+
+nav ul img {
+  margin-top: 5%;
+  margin-left: 5%;
+  padding-bottom: 2%;
+  margin-bottom: 3%;
+  width: 90%;
+  border-bottom: 1px solid white;
+}
+
+nav li {
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  display: table;
+}
+
+.asideSubNav li {
+  height: 10%;
+}
+
+nav a:hover {
+  background-color: rgb(48, 112, 190);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.asideSubNav {
+  font-size: 15px;
+  float: left;
+  width: 100%;
+  display: none;
+  padding-bottom: 1vh;
+}
+
+.asideSubNav li {
+  text-align: left;
+  margin-top: 5%;
+  padding-left: 10%;
+}
+
+.asideSubNav a {
+  color: #bbb;
+}
+
+.asideSubNav a:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.asideSubNavVisible {
+  display: inline;
+}
+
+.subNavigation {
+  position: relative;
+}
+
+/*Sub Nav Headers*/
+#groupHeaderSub, #categoryHeaderSub {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+main {
+  position: relative;
+  left: 20%;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+titlebar {
+  position: fixed;
+  z-index: 1;
+  width: 80%;
+  height: 10%;
+  background-color: white;/*#0C4F9F;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+
+#titlebarTitle {
+  width: 20%;
+}
+
+titlebar form input[type="text"] {
+  font-size: 20px;
+  width: 60%;
+}
+
+titlebar form input[type="submit"] {
+  background-color: transparent;
+  border: none;
+  height: 50%;
+  width: 30%;
+  font-size: 20px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+subnav {
+  column-rule-style: solid; 
+}
+
+.subnavOption input[type="button"] {
+  height: 50%;
+  font-size: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-left: -10%;
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+  font-weight: 400;
+}
+
+.subnavOption input[type="button"]:hover, .subSelected input[type="button"] {
+  color: black;
+}
+
+.column1 {
+  column-count: 1;
+}
+
+.column2 {
+  column-count: 2;
+}
+
+.column3 {
+  column-count: 3;
+}
+
+.column4 {
+  column-count: 4;
+}
+
+content {
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  left: 20%;
+  overflow-y: auto;
+}
+
+#emptyContentMessage {
+  position: relative;
+  width: 60%;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+}
+
+.navSelected {
+  background-color: rgb(48, 112, 190);
+}
+
+category h1 {
+  margin: 1%;
+  margin-left: 2%;
+}
+
+row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1%;
+  height: 50px;
+  align-items: center;
+}
+
+row form {
+  width: 5%;
+  height: 100%;
+}
+
+.itemButton {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+row input[type="button"] {
+  width: 5%;
+  height: 100%;
+  background-color: transparent;
+  border-style: none;
+  font-size: 30px;
+}
+
+row form select {
+  outline: none;
+  height: 30px;
+  position: relative;
+  top: 10px;
+}
+
+#accessRights input[type="button"] {
+  font-size: 20px;
+}
+
+.grey {
+  background-color: lightgray;
+}
+
+.itemName {
+  width: 20%;
+}
+
+.itemGroup, .itemCategory {
+  width: 20%;
+}
+
+.groupByCategory {
+  visibility: hidden;
+}
+
+.groupByGroup { 
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+#infrastructureDetails, #groupDetails, #categoryDetails {
+  height: 90%;
+}
+
+#infrastructureDetails h1, #infrastructureDetails h3, #groupDetails h1, #groupDetails h3, #categoryDetails h1, #categoryDetails h3 {
+  padding-left: 3%;
+  padding-top: 3%;
+}
+
+#infrastructureDescription {
+  resize: none;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+  border: 1px solid black;
+}
+
+#groupDescription, #categoryDescription {
+  resize: none;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  border: 1px solid black;
+}
+
+#infrastructureTechnicalInformation { 
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 50%;
+  margin-left: 10%;
+}
+
+#infrastructureTechnicalInformation input { 
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+#infrastructureNames {
+  height: 50%;
+}
+
+#infrastructurePDFs {
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+  height: 50%;
+  margin-bottom: 13%; 
+}
+
+.flexRow { 
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.flexColumn {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#infrastructureEditButton, #infrastructureBackButton, #infrastructureDeleteButton, #infrastructureFinishButton {
+  width: 10%;
+  margin-left: 3%;
+  margin-top: 10%;
+  padding: 1%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+#infrastructureID, #accountID {
+  visibility: hidden;
+}
+
+#confirmationURL {
+  visibility: hidden;
+}
+
+#groupID, #categoryID {
+  visibility: hidden;
+}
+
+confirmation {
+  position: absolute;
+  visibility: hidden;
+  z-index: 4;
+  height: 40%;
+  width: 40%;
+  background-color: white;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  left: 30%;
+  top: 30%;
+  border: 1px solid black;
+  opacity: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#confirmationMessage {
+  padding-top: 10%;
+}
+
+confirmation collection {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+confirmation collection input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 1%;
+  margin-right: 1%;
+  width: 40%;
+  margin-bottom: 10%;
+}
+
+confirmation collection input:hover {
+  background-color: rgb(48, 112, 190);
+  color: white;
+}
+
+errorMessage {
+  position: absolute;
+  visibility: hidden;
+  z-index: 4;
+  height: 40%;
+  width: 40%;
+  background-color: white;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  left: 30%;
+  top: 30%;
+  border: 1px solid black;
+  opacity: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#errorMessageMessage {
+  padding-top: 10%;
+}
+
+errorMessage collection {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+errorMessage collection input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 1%;
+  margin-right: 1%;
+  margin-bottom: 10%;
+}
+
+errorMessage collection input:hover {
+  background-color: rgb(48, 112, 190);
+  color: white;
+}
+
+greyOut {
+  visibility: hidden;
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.3;
+}
+
+#infrastructureEditButton:hover, #infrastructureBackButton:hover, #infrastructureDeleteButton:hover, #infrastructureFinishButton:hover {
+  background-color: #0C4F9F;
+  color: white;
+}
+
+#infrastructureAddCore, #groupAddCore {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+#manageGroupCore, #manageCategoryCore {
+  margin-left: 10%;
+}
+
+#infrastructureAddCore ul, #groupAddCore ul, #manageGroupCore ul, #manageCategoryCore ul {
+  list-style: none;
+}
+
+#infrastructureAddCore ul li, #groupAddCore ul li, #manageGroupCore ul li, #manageCategoryCore ul li {
+  padding-bottom: 1%;
+}
+
+#infrastructureAddExtra {
+  height: 50%;
+  margin-left: 10%;
+}
+
+#infrastructureAddExtra input[type="button"], #infrastructureAddCore input[type="button"], #groupAddCore input[type="button"], #manageGroupCore input[type="button"], #manageCategoryCore input[type="button"], #groupAddCore select, #manageGroupCore select, #manageCategoryCore select, #groupAddCore input[type="text"], #manageGroupCore input[type="text"], #manageCategoryCore input[type="text"], #infrastructureAddCore select, #infrastructureAddCore input[type="text"], #infrastructureAddExtra input[type="text"], #infrastructureAddExtra select, #infrastructureAddExtra input[type="date"], #infrastructureAddExtra input[type="number"], #infrastructureAddExtra textarea {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 1%;
+  margin-right: 1%;
+}
+
+#infrastructureAddExtra input[type="button"]:hover, #infrastructureAddCore input[type="button"]:hover, #groupAddCore input[type="button"]:hover, #manageGroupCore input[type="button"]:hover, #manageCategoryCore input[type="button"]:hover {
+  background-color: rgb(48, 112, 190);
+  color: white;
+}
+
+#infrastructureAddExtraAddField {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 5%;
+  margin-left: -1%;
+  padding: 1%;
+  background-color: #ddd;
+}
+
+#infrastructureAddExtraAddField input[type="button"], #infrastructureAddExtraAddField input[type="text"], #infrastructureAddExtraAddField select {
+  background-color: white;
+}
+
+#infrastructureAddExtra ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 1%;
+}
+
+.groupMembers, .noGroupMembers {
+  position: absolute;
+  border: 1px solid black;
+  top: 21%;
+  margin-bottom: 5%;
+  width: 40%;
+  height: 70%;
+  right: 5%;
+  overflow-y: scroll;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#groupDetails input[type="text"], #groupDetails textarea, #categoryDetails input[type="text"], #categoryDetails textarea {
+  border: 1px solid black;
+  padding: 1%;
+  margin-left: 0;
+}
+
+#groupAddMemberTitle {
+  text-align: center;
+  margin-top: 5%;
+  margin-right: 5%;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#groupName, #categoryName {
+  margin-top: 10%;
+}
+
+#groupAddCore {
+  margin-left: 10%;
+}
+
+#groupAddCore ul {
+  list-style: none;
+}
+
+#manageGroupCore ul, #manageCategoryCore ul {
+  list-style: none;
+}
+
+#accountCore {
+  margin-left: 10%;
+  margin-top: 10%;
+  list-style: none;
+}
+
+#accountCore li {
+  margin-bottom: 5%;
+}
+
+#accountCore li input[type="button"], #accountBackButton, #accountFinishButton, #accountInformationBackButton, #accountInformationEditButton {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 1%;
+  margin-right: 1%;
+}
+
+#accountCore li input[type="button"]:hover, #accountBackButton:hover, #accountFinishButton:hover, #accountInformationBackButton:hover, #accountInformationEditButton:hover {
+  background-color: rgb(48, 112, 190);
+}
+
+#accountBackButton, #accountFinishButton {
+  width: 10%;
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+#accountInformationBackButton, #accountInformationEditButton {
+  width: 10%;
+  margin-top: 5%;
+}
+
+#accountDescription {
+  resize: none;
+  padding: 1%;
+  margin: 10%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+#accountCore li input[type="text"], #accountCore li input[type="password"] {
+  border: 1px solid black;
+  width: 50%;
+  padding: 1%;
+}
+
+#addAccountDescription {
+  padding: 1%;
+  margin: 10%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+#accessCore {
+  margin: 5%;
+  list-style: none;
+}
+
+#accessCore input[type="text"] {
+  border: 1px solid black;
+  padding: 1%;
+  margin-bottom: 5%;
+}
+
+#accessCheckBoxTitle {
+  font-size: 20px;
+}
+
+#accessCore li input[type="checkbox"] {
+  margin-top: 1%;
+  margin-right: 1%;
+}
+
+#accessSaveButton, #accessAddButton {
+  margin-left: 5%;
+}
+
+#accessBackButton, #accessDeleteButton {
+  margin-left: 1.5%;
+}
+
+#accessSaveButton, #accessBackButton, #accessAddButton, #accessDeleteButton {
+  width: 5%;
+  margin-top: 0%;
+  padding: 0.5%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+#accessSaveButton:hover, #accessBackButton:hover, #accessAddButton:hover, #accessDeleteButton:hover {
+  background-color: #0C4F9F;
+  color: white;
+}
+
+.subnavSelected {
+  color: white;
+}
+
+input[type="date"]:read-only {
+  background-color: white;
+  border: 0.5px solid rgb(169, 169, 169);
+  color: black;
+}
+
+.tableHeadings {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #0C4F9F;
+  padding: 5px;
+  padding-left: 2%;
+  padding-right: 5%;
+  color: white;
+}
+
+#tableHeadings label {
+  font-size: 20px;
+}
+
+#searchCriteriaMessage {
+  padding: 2%;
+}
+
+#searchCriteriaDiv {
+  columns: 2;
+  padding-bottom: 1%;
+}
+
+#searchCriteriaDiv input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
+}
+
+#searchCriteriaDiv input:hover {
+  background-color: #0C4F9F;
+  color: white;
+}
+
+#searchCriteriaDivBottom input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 5%;
+  margin-right: 1%;
+  margin-top: 1%;
+}
+
+#searchCriteriaDivBottom input:hover {
+  background-color: #0C4F9F;
+  color: white;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#groupPopulateDiv {
+  position: absolute;
+  top: 15%;
+  margin-bottom: -2%;
+  column-count: 2;
+  right: 5%;
+  width: 40%;
+  column-rule-style: solid;
+}
+
+#groupPopulateDiv p {
+  text-align: center;
+}
+
+#groupPopulateDiv p input {
+  height: 100%;
+}
