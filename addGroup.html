@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Documentation Software</title>
-    <link rel='stylesheet', href='../public/stylesheets/style.css'>
+    <link rel='stylesheet', href='./public/stylesheets/style.css'>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="../public/javascripts/main.js"></script>
+    <script src="./public/javascripts/main.js"></script>
   </head>
   <body>
     <greyout id="greyOut"></greyout>
@@ -27,7 +27,7 @@
     <aside>
       <nav>
         <ul>
-          <img src="../public/images/logoWhitelightFull.png">
+          <img src="./public/images/logoWhitelightFull.png">
           <li>
             <a class="navSelected", href="./index.html">Infrastructure</a>
           </li>
@@ -46,7 +46,12 @@
               <ul>
                 <li id="groupHeaderSub">
                   <a href="./allGroups.html">
-                    <p> - Manage Groups</p>
+                    <p class="subnavSelected"> - Manage Groups</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./addGroup.html", class="subNavigation">
+                    <p class="subnavSelected"> - Add Group</p>
                   </a>
                 </li>
               </ul>
@@ -55,12 +60,7 @@
               <ul>
                 <li id="categoryHeaderSub">
                   <a href="./allCategories.html">
-                    <p class="subnavSelected"> - Manage Categories</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="./addCategory.html", class="subNavigation">
-                    <p class="subnavSelected"> - Add Category</p>
+                    <p> - Manage Categories</p>
                   </a>
                 </li>
               </ul>
@@ -113,8 +113,9 @@
     <main>
       <titlebar>
         <p id="titlebarTitle">
-          Add Category
+          Add Group
         </p>
+
 
         <form action="#", method="GET">
           <label></label>
@@ -122,21 +123,21 @@
       </titlebar>
     </main>
 
-    <content id="categoryDetails">
+    <content id="groupDetails">
       <div class="flexRow">
         <div class="flexColumn">
-          <div id="manageCategoryCore">
-            <label id="categoryID">1</label>
+          <div id="groupAddCore">
+            <label id="groupID">1</label>
             <ul>
               <li>
-                <input type="text", id="categoryName", placeholder="Name">
+                <input type="text", id="groupNameField", placeholder="Name">
               </li>
               <li>
-                <textarea id="categoryDescription", maxlength="200", rows="10", placeholder="Description"></textarea>
+                <textarea id="groupDescription", maxlength="200", rows="10", placeholder="Description"></textarea>
               </li>
+              <input id="groupBackButton", type="button", value="Back">
+              <input id="groupFinishButton", type="button", value="Finish">
             </ul>
-            <input id="categoryBackButton", type="button", value="Back">
-            <input id="categoryFinishButton", type="button", value="Finish">
           </div>
         </div>
       </div>

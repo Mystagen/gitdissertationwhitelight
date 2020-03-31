@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Documentation Software</title>
-    <link rel='stylesheet', href='../public/stylesheets/style.css'>
+    <link rel='stylesheet', href='./public/stylesheets/style.css'>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="../public/javascripts/main.js"></script>
+    <script src="./public/javascripts/main.js"></script>
   </head>
   <body>
     <greyout id="greyOut"></greyout>
@@ -27,7 +27,7 @@
     <aside>
       <nav>
         <ul>
-          <img src="../public/images/logoWhitelightFull.png">
+          <img src="./public/images/logoWhitelightFull.png">
           <li>
             <a class="navSelected", href="./index.html">Infrastructure</a>
           </li>
@@ -39,7 +39,7 @@
             </li>
             <li>
               <a href="./addItem.html">
-                <p class="subnavSelected"> - Add Infrastructure</p>
+                <p class="subnavNotSelected"> - Add Infrastructure</p>
               </a>
             </li>
             <li>
@@ -55,7 +55,12 @@
               <ul>
                 <li id="categoryHeaderSub">
                   <a href="./allCategories.html">
-                    <p> - Manage Categories</p>
+                    <p class="subnavSelected"> - Manage Categories</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./addCategory.html", class="subNavigation">
+                    <p class="subnavNotSelected"> - Add Category</p>
                   </a>
                 </li>
               </ul>
@@ -107,68 +112,40 @@
 
     <main>
       <titlebar>
-        <p id="titlebarTitle">Add Item</p>
+        <p id="titlebarTitle">
+          Category Management
+        </p>
 
-        <form method="GET">
-          <label> </label>
+        <form action="#", method="GET">
+          <input type="text", placeholder="", name="searchBarField">
+          <input type="submit", value="Search", name="search">
         </form>
       </titlebar>
     </main>
 
-    <content id="infrastructureDetails">
-      <div class="flexRow">
-        <div class="flexColumn">
-          <div id="infrastructureAddCore">
-            <label id="infrastructureID">1</label>
-            <ul>
-              <li>
-                <input type="text", id="infrastructureNameField", placeholder="Name">
-              </li>
-              <li>
-                <div id="infrastructureAddCoreCategory">
-                  <select id="infrastructureCategoryField">
-                    <option>PC</option>
-                    <option>Server</option>
-                  </select>
-                  <input type="button", id="midAddAddCategoryButton", value="Add Category">
-                </div>
-              </li>
-              <li>
-                <div id="infrastructureAddCoreGroup">
-                  <select id="infrastructureGroupField">
-                    <option selected>No Group</option>
-                    <option>Administration</option>
-                    <option>Accounts</option>
-                    <option>IT</option>
-                  </select>
-                  <input type="button", id="midAddAddGroupButton", value="Add Group">
-                </div>
-              </li>
-            </ul>
-            <input id="infrastructureBackButton", type="button", value="Back">
-            <input id="infrastructureFinishButton", type="button", value="Finish">
-          </div>
-          <div id="infrastructureAddExtra">
-            <h2>Add a Field</h2>
-            <div id="infrastructureAddExtraAddField">
-              <input type="text", id="addFieldName", placeholder="Name">
-              <select id="addFieldType">
-                <option>Text</option>
-                <option>Date</option>
-              </select>
-              <input type="button", id="addFieldSubmit", value="Add Field">
-            </div>
-            <ul id="fieldAreas">
-            </ul>
-          </div>
-        </div>
-        <div class="flexColumn">
-          <textarea id="infrastructureDescription", maxlength="200", rows="10", placeholder="Desciption"></textarea>
-          <div id="infrastructurePDFs">
-            <p>PDFs HERE</p>
-          </div>
-        </div>
+    <content id="allCategories">
+      <div class="tableHeadings">
+        <label>Name</label>
+        <label>Population</label>
+        <label></label>
       </div>
+      <row class="grey">
+        <p class="itemName">PCs</p>
+        <p class="itemCategory">4</p>
+        <form action="./manageCategory.html">
+          <input type="hidden", name="categoryID", value="1">
+          <input class="itemButton", type="submit", value="+">
+        </form>
+      </row>
+      <row>
+        <p class="itemName">Servers</p>
+        <p class="itemCategory">1</p>
+        <form action="./manageCategory.html">
+          <input type="hidden", name="categoryID", value="2">
+          <input class="itemButton", type="submit", value="+">
+        </form>
+      </row>
+      <hr>
     </content>
   </body>
 </html>

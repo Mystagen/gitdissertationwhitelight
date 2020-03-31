@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Documentation Software</title>
-    <link rel='stylesheet', href='../public/stylesheets/style.css'>
+    <link rel='stylesheet', href='./public/stylesheets/style.css'>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="../public/javascripts/main.js"></script>
+    <script src="./public/javascripts/main.js"></script>
   </head>
   <body>
     <greyout id="greyOut"></greyout>
@@ -27,7 +27,7 @@
     <aside>
       <nav>
         <ul>
-          <img src="../public/images/logoWhitelightFull.png">
+          <img src="./public/images/logoWhitelightFull.png">
           <li>
             <a class="navSelected", href="./index.html">Infrastructure</a>
           </li>
@@ -46,7 +46,12 @@
               <ul>
                 <li id="groupHeaderSub">
                   <a href="./allGroups.html">
-                    <p> - Manage Groups</p>
+                    <p class="subnavSelected"> - Manage Groups</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./addGroup.html", class="subNavigation">
+                    <p class="subnavNotSelected"> - Add Group</p>
                   </a>
                 </li>
               </ul>
@@ -55,12 +60,7 @@
               <ul>
                 <li id="categoryHeaderSub">
                   <a href="./allCategories.html">
-                    <p class="subnavSelected"> - Manage Categories</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="./addCategory.html", class="subNavigation">
-                    <p class="subnavNotSelected"> - Add Category</p>
+                    <p> - Manage Categories</p>
                   </a>
                 </li>
               </ul>
@@ -113,7 +113,7 @@
     <main>
       <titlebar>
         <p id="titlebarTitle">
-          Category Management
+          Group Management
         </p>
 
         <form action="#", method="GET">
@@ -123,29 +123,38 @@
       </titlebar>
     </main>
 
-    <content id="allCategories">
+    <content id="allGroups">
       <div class="tableHeadings">
         <label>Name</label>
         <label>Population</label>
         <label></label>
       </div>
       <row class="grey">
-        <p class="itemName">PCs</p>
-        <p class="itemCategory">4</p>
-        <form action="./manageCategory.html">
-          <input type="hidden", name="categoryID", value="1">
+        <p class="itemName">Administration</p>
+        <p class="itemGroup">3</p>
+        <form action="./manageGroup.html">
+          <input type="hidden", name="groupID", value="1">
           <input class="itemButton", type="submit", value="+">
         </form>
       </row>
       <row>
-        <p class="itemName">Servers</p>
-        <p class="itemCategory">1</p>
-        <form action="./manageCategory.html">
-          <input type="hidden", name="categoryID", value="2">
+        <p class="itemName">Accounts</p>
+        <p class="itemGroup">1</p>
+        <form action="./manageGroup.html">
+          <input type="hidden", name="groupID", value="2">
+          <input class="itemButton", type="submit", value="+">
+        </form>
+      </row>
+      <row class="grey">
+        <p class="itemName">IT</p>
+        <p class="itemGroup">1</p>
+        <form action="./manageGroup.html">
+          <input type="hidden", name="groupID", value="3">
           <input class="itemButton", type="submit", value="+">
         </form>
       </row>
       <hr>
     </content>
+
   </body>
 </html>
