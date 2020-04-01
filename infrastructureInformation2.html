@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Documentation Software</title>
+    <link rel='stylesheet', href='./public/stylesheets/style.css'>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./public/javascripts/main.js"></script>
+  </head>
+  <body>
+    <greyout id="greyOut"></greyout>
+    <confirmation id="confirmation">
+      <label id="confirmationMessage">PLACEHOLDER</label>
+      <label id="confirmationURL">PLACEHOLDER</label>
+      <collection>
+        <input type="button", id="confirmationYes", value="Yes">
+        <input type="button", id="confirmationNo", value="Cancel">
+      </collection>
+    </confirmation>
+    
+    <errorMessage id="errorMessage">
+      <label id="errorMessageMessage">PLACEHOLDER</label>
+      <collection>
+        <input type="button", id="errorOK", value="OK">
+      </collection>
+    </errorMessage>
+
+    <aside>
+      <nav>
+        <ul>
+          <img src="./public/images/logoWhitelightFull.png">
+          <li>
+            <a class="navSelected", href="./index.html">Infrastructure</a>
+          </li>
+          <ul class="asideSubNav", id="InfrastructureSubNav">
+            <li>
+              <a href="./index.html">
+                <p class="subnavSelected"> - All Infrastructure</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addItem.html">
+                <p class="subnavNotSelected"> - Add Infrastructure</p>
+              </a>
+            </li>
+            <li>
+              <ul>
+                <li id="groupHeaderSub">
+                  <a href="./allGroups.html">
+                    <p> - Manage Groups</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li id="categoryHeaderSub">
+                  <a href="./allCategories.html">
+                    <p> - Manage Categories</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+          <li>
+            <a class="navNotSelected", href="./passwords.html"> Passwords</a>
+          </li>
+          <ul class="asideSubNav", id="PasswordsSubNav">
+            <li>
+              <a href="./passwords.html">
+                <p> - All Passwords</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addAccount.html">
+                <p> - Add Account</p>
+              </a>
+            </li>
+          </ul>
+
+          <li>
+            <a class="navNotSelected", href="./accessRights.html"> Access Rights</a>
+          </li>
+          <ul class="asideSubNav", id="Access RightsSubNav">
+            <li>
+              <a href="./accessRights.html">
+                <p> - All Access Rights</p>
+              </a>
+            </li>
+            <li>
+              <a href="./addAccessRights.html">
+                <p> - Add Access Level</p>
+              </a>
+            </li>
+          </ul>
+
+          <li>
+            <a class="navNotSelected", href="./userManagement.html"> User Management</a>
+          </li>
+
+          <li>
+            <a class="navNotSelected", href="#"> Settings</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <titlebar>
+        <p id="titlebarTitle">
+          Infrastructure
+        </p>
+
+        <form action="#", method="GET">
+          <label></label>
+        </form>
+      </titlebar>
+    </main>
+
+    <content id="infrastructureDetails">
+      <div class="flexRow">
+        <div class="flexColumn">
+          <div id="infrastructureNames">
+            <label id="infrastructureID">2</label>
+            <ul>
+              <li>
+                <h1 id="infrastructureName">PC 002</h1>
+              </li>
+              <li>
+                <h3>Category: PCs</h3>
+              </li>
+              <li>
+                <h3>Group: Administration</h3>
+              </li>
+            </ul>
+            <input id="infrastructureBackButton", type="button", value="Back">
+            <input id="infrastructureEditButton", type="button", value="Edit">
+            <input id="infrastructureDeleteButton", type="button", value="Delete">
+          </div>
+          <form id="infrastructureTechnicalInformation">
+            <label>IP Address:</label>
+            <input type="text", value="127.0.0.2", readonly>
+          </form>
+        </div>
+        <div class="flexColumn">
+          <textarea id="infrastructureDescription", rows="10", placeholder="Description", readonly>Workstation 002 in the administration department</textarea>
+          <div id="infrastructurePDFs">
+            <p>PDFs HERE</p>
+          </div>
+        </div>
+      </div>
+    </content>
+
+      div(class="flexColumn")
+        textarea(id="infrastructureDescription", rows="10", placeholder="Description", readonly)= data['infrastructureInformation']['description']
+        div(id="infrastructurePDFs")
+          p PDFs HERE
+
+
+  </body>
+</html>

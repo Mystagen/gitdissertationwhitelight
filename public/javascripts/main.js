@@ -49,7 +49,9 @@ function subNavSetup() {
 
     categoryButton = document.getElementById('categoryFilter');
     groupButton = document.getElementById('groupFilter');
+    console.log(categoryButton);
     if (categoryButton != null && groupButton != null) {
+        console.log("Ran");
         categoryButton.addEventListener("click", function(){categoryChange(this.id)});
         groupButton.addEventListener("click", function(){categoryChange(this.id)});
     }
@@ -113,7 +115,7 @@ function editAccessClick(clickedId) {
 }
 
 function backToInfrastructure() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 }
 
 function backToGroups() {
@@ -130,12 +132,12 @@ function backToAccess() {
 
 function editInfrastructure() {
     infrastructureID = document.getElementById("infrastructureID").textContent;
-    window.location.href = "/addItem.html?mode=editInfrastructure&id=" + infrastructureID;
+    window.location.href = "./addItem.html?mode=editInfrastructure&id=" + infrastructureID;
 }
 
 function cancelInfrastructureEdit() {
     infrastructureID = document.getElementById('infrastructureID').textContent;
-    window.location.href = "/infrastructureInformation.html?infrastructureID=" + infrastructureID;
+    window.location.href = "./infrastructureInformation.html?infrastructureID=" + infrastructureID;
 }
 
 function updateInfrastructure() {
@@ -154,7 +156,7 @@ function updateInfrastructure() {
         extraDataDataType.push(extraFields[i].children[1].type);
     }
 
-    window.location.href = "/infrastructureInformation.html?mode=updateInfrastructure&infrastructureID=" + infrastructureID + "&name=" + infrastructureName + "&category=" + infrastructureCategory + "&description=" + infrastructureDescription + "&group=" + infrastructureGroup + "&extraData=" + extraData + "&extraDataDataTypes=" + extraDataDataType; 
+    window.location.href = "./infrastructureInformation.html?mode=updateInfrastructure&infrastructureID=" + infrastructureID + "&name=" + infrastructureName + "&category=" + infrastructureCategory + "&description=" + infrastructureDescription + "&group=" + infrastructureGroup + "&extraData=" + extraData + "&extraDataDataTypes=" + extraDataDataType; 
 }
 
 function confirmationAction() {
@@ -191,7 +193,7 @@ function addNewGroup() {
 
 function editGroup() {
     groupID = document.getElementById("groupID").textContent;
-    window.location.href = "/addGroup.html?mode=editGroup&id=" + groupID;
+    window.location.href = "./addGroup.html?mode=editGroup&id=" + groupID;
 }
 
 function deleteGroup() {
@@ -211,7 +213,7 @@ function deleteGroup() {
 
 function cancelGroupEdit() {
     groupID = document.getElementById('groupID').textContent;
-    window.location.href = "/manageGroup.html?groupID=" + groupID;
+    window.location.href = "./manageGroup.html?groupID=" + groupID;
 }
 
 function updateGroups() {
@@ -219,7 +221,7 @@ function updateGroups() {
     groupName = document.getElementById('groupNameField').value;
     groupDescription = document.getElementById('groupDescription').value;
     
-    window.location.href = "/manageGroup.html?mode=updateGroup&groupID=" + groupID + "&name=" + groupName + "&description=" + groupDescription; 
+    window.location.href = "./manageGroup.html?mode=updateGroup&groupID=" + groupID + "&name=" + groupName + "&description=" + groupDescription; 
 }
 
 function backToCategories() {
@@ -239,7 +241,7 @@ function addNewCategory() {
 
 function editCategory() {
     categoryID = document.getElementById("categoryID").textContent;
-    window.location.href = "/addCategory.html?mode=editCategory&id=" + categoryID;
+    window.location.href = "./addCategory.html?mode=editCategory&id=" + categoryID;
 }
 
 function deleteCategory() {
@@ -259,7 +261,7 @@ function deleteCategory() {
 
 function cancelCategoryEdit() {
     categoryID = document.getElementById('categoryID').textContent;
-    window.location.href = "/manageCategory.html?categoryID=" + categoryID;
+    window.location.href = "./manageCategory.html?categoryID=" + categoryID;
 }
 
 function updateCategory() {
@@ -267,7 +269,7 @@ function updateCategory() {
     categoryName = document.getElementById('categoryName').value;
     categoryDescription = document.getElementById('categoryDescription').value;
     
-    window.location.href = "/manageCategory.html?mode=updateCategory&categoryID=" + categoryID + "&name=" + categoryName + "&description=" + categoryDescription;
+    window.location.href = "./manageCategory.html?mode=updateCategory&categoryID=" + categoryID + "&name=" + categoryName + "&description=" + categoryDescription;
 }
 
 function revealPassword() {
@@ -359,7 +361,7 @@ function midAddCategory() {
         priorLocation = "add";
     }
 
-    window.location.href = "/addCategory.html?mode=midAdd&priorLocation=" + priorLocation + "&previous=" + id;
+    window.location.href = "./addCategory.html?mode=midAdd&priorLocation=" + priorLocation + "&previous=" + id;
 }
 
 function midAddGroup() {
@@ -376,7 +378,7 @@ function midAddGroup() {
         priorLocation = "add";
     }
 
-    window.location.href = "/addGroup.html?mode=midAdd&priorLocation=" + priorLocation + "&previous=" + id;
+    window.location.href = "./addGroup.html?mode=midAdd&priorLocation=" + priorLocation + "&previous=" + id;
 }
 
 function quickCancel() {
@@ -395,9 +397,9 @@ function quickCancel() {
     }
 
     if (window.location.href.includes("priorLocation=\"edit\"")) {
-        window.location.href = "/addItem.html?mode=editInfrastructure&id=" + id;
+        window.location.href = "./addItem.html?mode=editInfrastructure&id=" + id;
     } else {
-        window.location.href = "/additem.html";
+        window.location.href = "./additem.html";
     }
 }
 
@@ -500,7 +502,7 @@ function editAccount() {
 
 function cancelAccountEdit() {
     accountID = document.getElementById('accountID').textContent;
-    window.location.href = "/accountInformation.html?id=" + accountID;
+    window.location.href = "./accountInformation.html?id=" + accountID;
 }
 
 function updateAccount() {
@@ -510,7 +512,7 @@ function updateAccount() {
     accountPassword = document.getElementById('addAccountPassword').value;
     accountDescription = document.getElementById('addAccountDescription').value;
 
-    window.location.href = "/accountInformation.html?mode=update&id=" + accountID + "&name=" + accountName + "&username=" + accountUsername + "&password=" + accountPassword + "&description=" + accountDescription;
+    window.location.href = "./accountInformation.html?mode=update&id=" + accountID + "&name=" + accountName + "&username=" + accountUsername + "&password=" + accountPassword + "&description=" + accountDescription;
 }
 
 function deleteAccount() {
