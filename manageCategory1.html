@@ -46,12 +46,7 @@
               <ul>
                 <li id="groupHeaderSub">
                   <a href="./allGroups.html">
-                    <p class="subnavSelected"> - Manage Groups</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="./addGroup.html", class="subNavigation">
-                    <p class="subnavNotSelected"> - Add Group</p>
+                    <p> - Manage Groups</p>
                   </a>
                 </li>
               </ul>
@@ -60,7 +55,12 @@
               <ul>
                 <li id="categoryHeaderSub">
                   <a href="./allCategories.html">
-                    <p> - Manage Categories</p>
+                    <p class="subnavSelected"> - Manage Categories</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./addCategory.html", class="subNavigation">
+                    <p class="subnavSelected"> - Add Category</p>
                   </a>
                 </li>
               </ul>
@@ -113,7 +113,7 @@
     <main>
       <titlebar>
         <p id="titlebarTitle">
-          Manage Group
+          Manage Category
         </p>
 
         <form action="#", method="GET">
@@ -122,43 +122,22 @@
       </titlebar>
     </main>
 
-    <content id="groupDetails">
+    <content id="categoryDetails">
       <div class="flexRow">
         <div class="flexColumn">
-          <div id="manageGroupCore">
-            <label id="groupID">3</label>
+          <div id="manageCategoryCore">
+            <label id="categoryID">1</label>
             <ul>
               <li>
-                <h1 id="groupName">IT</h1>
+                <h1 id="categoryName">PCs</h1>
               </li>
               <li>
-                <textarea id="groupDescription", placeholder="Description", rows="10", readonly>The core IT infrastructure employed by the company</textarea>
+                <textarea id="categoryDescription", placeholder="Description", rows="10", readonly>All PCs utilised by the company</textarea>
               </li>
             </ul>
-            <input id="groupBackButton", type="button", value="Back">
-            <input id="groupEditButton", type="button", value="Edit">
-            <input id="groupDeleteButton", type="button", value="Delete">
-          </div>
-        </div>
-        <div class="flexColumn">
-          <h1 id="groupAddMemberTitle"> Manage Group Members</h1>
-          <div id="groupPopulateDiv">
-            <p class="subnavOption subSelected">
-              <input id="groupMembersFilter", type="button", value="Group Members">
-            </p>
-            <p class="subnavOption">
-              <input id="addToGroupFilter", type="button", value="Not In A Group">
-            </p>
-          </div>
-          <div class="groupMembers visible">
-            <row class="grey">
-              <p class="itemName">Server 001</p>
-              <p class="itemGroup">Servers</p>
-              <input class="removeGroupItemButton", type="button", value="-", id="5">
-            </row>
-          </div>
-          <div class="noGroupMembers hidden">
-
+            <input id="categoryBackButton", type="button", value="Back">
+            <input id="categoryEditButton", type="button", value="Edit">
+            <input id="categoryDeleteButton", type="button", value="Delete">
           </div>
         </div>
       </div>
