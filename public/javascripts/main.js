@@ -49,9 +49,7 @@ function subNavSetup() {
 
     categoryButton = document.getElementById('categoryFilter');
     groupButton = document.getElementById('groupFilter');
-    console.log(categoryButton);
     if (categoryButton != null && groupButton != null) {
-        console.log("Ran");
         categoryButton.addEventListener("click", function(){categoryChange(this.id)});
         groupButton.addEventListener("click", function(){categoryChange(this.id)});
     }

@@ -29,7 +29,7 @@
         <ul>
           <img src="./public/images/logoWhitelightFull.png">
           <li>
-            <a class="navSelected", href="./index.html">Infrastructure</a>
+            <a class="navNotSelected", href="./index.html">Infrastructure</a>
           </li>
           <ul class="asideSubNav", id="InfrastructureSubNav">
             <li>
@@ -46,12 +46,7 @@
               <ul>
                 <li id="groupHeaderSub">
                   <a href="./allGroups.html">
-                    <p class="subnavSelected"> - Manage Groups</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="./addGroup.html", class="subNavigation">
-                    <p class="subnavNotSelected"> - Add Group</p>
+                    <p> - Manage Groups</p>
                   </a>
                 </li>
               </ul>
@@ -68,23 +63,23 @@
           </ul>
           
           <li>
-            <a class="navNotSelected", href="./passwords.html"> Passwords</a>
+            <a class="navSelected", href="./passwords.html">Passwords</a>
           </li>
           <ul class="asideSubNav", id="PasswordsSubNav">
             <li>
               <a href="./passwords.html">
-                <p> - All Passwords</p>
+                <p class="subnavSelected"> - All Passwords</p>
               </a>
             </li>
             <li>
               <a href="./addAccount.html">
-                <p> - Add Account</p>
+                <p class="subnavNotSelected"> - Add Account</p>
               </a>
             </li>
           </ul>
 
           <li>
-            <a class="navNotSelected", href="./blankPage.html"> Access Rights</a>
+            <a class="navNotSelected", href="./blankPage.html">Access Rights</a>
           </li>
           <ul class="asideSubNav", id="Access RightsSubNav">
             <li>
@@ -100,7 +95,7 @@
           </ul>
 
           <li>
-            <a class="navNotSelected", href="./blankPage.html"> User Management</a>
+            <a class="navNotSelected", href="./blankPage.html">User Management</a>
           </li>
 
           <li>
@@ -113,7 +108,7 @@
     <main>
       <titlebar>
         <p id="titlebarTitle">
-          Manage Group
+          Passwords
         </p>
 
         <form action="#", method="GET">
@@ -122,44 +117,35 @@
       </titlebar>
     </main>
 
-    <content id="groupDetails">
+    <content class="visible">
       <div class="flexRow">
         <div class="flexColumn">
-          <div id="manageGroupCore">
-            <label id="groupID">3</label>
-            <ul>
-              <li>
-                <h1 id="groupName">IT</h1>
-              </li>
-              <li>
-                <textarea id="groupDescription", placeholder="Description", rows="10", readonly>The core IT infrastructure employed by the company</textarea>
-              </li>
-            </ul>
-            <input id="groupBackButton", type="button", value="Back">
-            <input id="groupEditButton", type="button", value="Edit">
-            <input id="groupDeleteButton", type="button", value="Delete">
-          </div>
+          <label id="accountID">1</label>
+          <ul id="accountCore">
+            <li>
+              <label id="accountName">Office 365 Log-in</label>
+            </li>
+            <li>
+              <label>Username: </label>
+              <label>username123</label>
+            </li>
+            <li>
+              <label>Password: </label>
+              <input id="accountPasswordField", type="password", readonly, value="averysecurepassword">
+            </li>
+            <li>
+              <input id="passwordRevealButton", type="button", value="Toggle Visability">
+              <input id="copyButton", type="button", value="Copy Password">
+            </li>
+            <li>
+              <input id="accountInformationBackButton", type="button", value="Back">
+              <input id="accountInformationDeleteButton", type="button", value="Delete">
+              <input id="accountInformationEditButton", type="button", value="Edit">
+            </li>
+          </ul>
         </div>
         <div class="flexColumn">
-          <h1 id="groupAddMemberTitle"> Manage Group Members</h1>
-          <div id="groupPopulateDiv">
-            <p class="subnavOption subSelected">
-              <input id="groupMembersFilter", type="button", value="Group Members">
-            </p>
-            <p class="subnavOption">
-              <input id="addToGroupFilter", type="button", value="Not In A Group">
-            </p>
-          </div>
-          <div class="groupMembers visible">
-            <row class="grey">
-              <p class="itemName">Server 001</p>
-              <p class="itemGroup">Servers</p>
-              <input class="removeGroupItemButton", type="button", value="-", id="5">
-            </row>
-          </div>
-          <div class="noGroupMembers hidden">
-
-          </div>
+          <textarea id="accountDescription", readonly>The company log-in for Microsoft's office 365 service</textarea>
         </div>
       </div>
     </content>
