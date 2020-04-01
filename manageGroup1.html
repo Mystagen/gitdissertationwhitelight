@@ -113,48 +113,65 @@
     <main>
       <titlebar>
         <p id="titlebarTitle">
-          Group Management
+          Infrastructure
         </p>
 
         <form action="#", method="GET">
-          <input type="text", placeholder="", name="searchBarField">
-          <input type="submit", value="Search", name="search">
+          <label></label>
         </form>
       </titlebar>
     </main>
 
-    <content id="allGroups">
-      <div class="tableHeadings">
-        <label>Name</label>
-        <label>Population</label>
-        <label></label>
-      </div>
-      <row class="grey">
-        <p class="itemName">Administration</p>
-        <p class="itemGroup">3</p>
-        <form action="./manageGroup1.html">
-          <input type="hidden", name="groupID", value="1">
-          <input class="itemButton", type="submit", value="+">
-        </form>
-      </row>
-      <row>
-        <p class="itemName">Accounts</p>
-        <p class="itemGroup">1</p>
-        <form action="./manageGroup2.html">
-          <input type="hidden", name="groupID", value="2">
-          <input class="itemButton", type="submit", value="+">
-        </form>
-      </row>
-      <row class="grey">
-        <p class="itemName">IT</p>
-        <p class="itemGroup">1</p>
-        <form action="./manageGroup1.html">
-          <input type="hidden", name="groupID", value="3">
-          <input class="itemButton", type="submit", value="+">
-        </form>
-      </row>
-      <hr>
-    </content>
+    <content id="groupDetails">
+      <div class="flexRow">
+        <div class="flexColumn">
+          <div id="manageGroupCore">
+            <label id="groupID">1</label>
+            <ul>
+              <li>
+                <h1 id="groupName">Administration</h1>
+              </li>
+              <li>
+                <textarea id="groupDescription", placeholder="Description", rows="10", readonly>A group of all the infrastructure used by the administration team</textarea>
+              </li>
+            </ul>
+            <input id="groupBackButton", type="button", value="Back">
+            <input id="groupEditButton", type="button", value="Edit">
+            <input id="groupDeleteButton", type="button", value="Delete">
+          </div>
+        </div>
+        <div class="flexColumn">
+          <h1 id="groupAddMemberTitle"> Manage Group Members</h1>
+          <div id="groupPopulateDiv">
+            <p class="subnavOption subSelected">
+              <input id="groupMembersFilter", type="button", value="Group Members">
+            </p>
+            <p class="subnavOption">
+              <input id="addToGroupFilter", type="button", value="Not In A Group">
+            </p>
+          </div>
+          <div class="groupMembers visible">
+            <row class="grey">
+              <p class="itemName">PC 001</p>
+              <p class="itemGroup">PCs</p>
+              <input class="removeGroupItemButton", type="button", value="-", id="1">
+            </row>
+            <row>
+              <p class="itemName">PC 002</p>
+              <p class="itemGroup">PCs</p>
+              <input class="removeGroupItemButton", type="button", value="-", id="2">
+            </row>
+            <row class="grey">
+              <p class="itemName">PC 003</p>
+              <p class="itemGroup">PCs</p>
+              <input class="removeGroupItemButton", type="button", value="-", id="3">
+            </row>
+          </div>
+          <div class="noGroupMembers hidden">
 
+          </div>
+        </div>
+      </div>
+    </content>
   </body>
 </html>
